@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selma JBILOU</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#000;color:#fff;}
+
+nav{
+position:fixed;width:100%;top:0;
+display:flex;justify-content:center;gap:50px;
+padding:20px;background:rgba(0,0,0,0.9);
+border-bottom:1px solid #111;z-index:1000;
+}
+nav a{color:#aaa;text-decoration:none;font-size:14px;letter-spacing:1px;transition:0.3s;}
+nav a:hover{color:#fff;}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+}
+
+/* HOME */
+#home h1{
+font-family:'Playfair Display',serif;
+font-size:70px;
+letter-spacing:4px;
+}
+.subtitle{margin-top:15px;font-size:18px;color:#777;}
+
+button{
+margin-top:30px;
+border:1px solid #fff;
+background:transparent;
+color:#fff;
+padding:12px 30px;
+cursor:pointer;
+transition:0.3s;
+}
+button:hover{background:#fff;color:#000;}
+
+.container{max-width:900px;width:100%;}
+
+/* ABOUT */
+.about-box{
+border:1px solid #111;
+padding:40px;
+background:#050505;
+font-size:18px;
+line-height:1.8;
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s ease forwards;
+}
+
+/* PROJECTS */
+.projects-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:30px;
+}
+
+.project{
+border:1px solid #111;
+padding:25px;
+background:#050505;
+transition:0.4s;
+text-align:left;
+}
+.project:hover{background:#fff;color:#000;}
+
+.project h3{margin-bottom:10px;}
+.project p{font-size:14px;color:#aaa;}
+.project:hover p{color:#333;}
+
+.project a{
+display:inline-block;
+margin-top:10px;
+font-size:13px;
+color:#888;
+text-decoration:underline;
+}
+
+/* CONTACT */
+
+.socials a {
+display:flex;
+align-items:center;
+justify-content:center;
+width:50px;
+height:50px;
+}
+
+.contact-box{
+border:1px solid #111;
+padding:40px;
+background:#050505;
+}
+
+.socials{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.socials a{
+color:#fff;
+font-size:22px;
+border:1px solid #fff;
+padding:10px;
+transition:0.3s;
+}
+.socials a:hover{
+background:#fff;
+color:#000;
+}
+
+@keyframes fadeUp{
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:768px){
+#home h1{font-size:40px;}
+.projects-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Accueil</a>
+<a href="#about">À propos</a>
+<a href="#projects">Projets</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+<div>
+<h1>SELMA JBILOU</h1>
+<p class="subtitle">Ingénieure en intelligence artificielle spécialisée en machine learning et MLOps</p>
+<button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+Voir mes projets
+</button>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<h1>À PROPOS</h1>
+
+<div class="about-box">
+Je suis ingénieure en intelligence artificielle spécialisée dans le développement et la mise en production de modèles de machine learning.  
+
+Je conçois des solutions data de bout en bout, de l’analyse des besoins métiers jusqu’au déploiement et au suivi des performances des modèles.  
+
+Je m’intéresse particulièrement aux problématiques de MLOps, de reproductibilité et d’industrialisation des systèmes IA.
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h1>MES PROJETS</h1>
+
+<div class="projects-grid">
+
+<div class="project">
+<h3>Crédit Scoring - Projet Data</h3>
+<p><strong>Contexte :</strong> Prédiction de la solvabilité client.</p>
+<p><strong>Besoins :</strong> Réduire le risque de défaut.</p>
+<p><strong>Solution :</strong> Random Forest, XGBoost.</p>
+<p><strong>MLOps :</strong> MLflow + versionnement.</p>
+<p><strong>Résultat :</strong> Accuracy : 91%.</p>
+<a href="#">Voir le projet GitHub</a>
+</div>
+
+<div class="project">
+<h3>Machine Learning Model</h3>
+<p>Développement de modèles de classification et régression.</p>
+<p>Optimisation des performances et validation croisée.</p>
+<a href="#">Voir le projet GitHub</a>
+</div>
+
+<div class="project">
+<h3>Data Analyse</h3>
+<p>Analyse et visualisation de données pour prise de décision.</p>
+<p>Utilisation de Python et outils data.</p>
+<a href="#">Voir le projet GitHub</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<h1>CONTACT</h1>
+
+<div class="contact-box">
+
+<p>E-mail : selma.jbl92@gmail.com</p>
+
+<div class="socials">
+<a href="https://github.com/sjbl69" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/selma-jbilou-758755254/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+</div>
+
+<a href="cv.pdf" target="_blank">
+<button>Voir mon CV</button>
+</a>
+
+
+</div>
+</div>
+</section>
+
+</body>
+</html>
