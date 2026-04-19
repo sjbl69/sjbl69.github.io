@@ -18,7 +18,7 @@ display:flex;justify-content:center;gap:50px;
 padding:20px;background:rgba(0,0,0,0.9);
 border-bottom:1px solid #111;z-index:1000;
 }
-nav a{color:#aaa;text-decoration:none;font-size:14px;letter-spacing:1px;transition:0.3s;}
+nav a{color:#aaa;text-decoration:none;font-size:14px;transition:0.3s;}
 nav a:hover{color:#fff;}
 
 section{
@@ -30,7 +30,6 @@ text-align:center;
 padding:40px 20px;
 }
 
-/* HOME */
 #home h1{
 font-family:'Playfair Display',serif;
 font-size:70px;
@@ -38,32 +37,16 @@ letter-spacing:4px;
 }
 .subtitle{margin-top:15px;font-size:18px;color:#777;}
 
-button{
-margin-top:30px;
-border:1px solid #fff;
-background:transparent;
-color:#fff;
-padding:12px 30px;
-cursor:pointer;
-transition:0.3s;
-}
-button:hover{background:#fff;color:#000;}
-
 .container{max-width:900px;width:100%;}
 
-/* ABOUT */
-.about-box{
+.about-box, .skills-box, .soft-box{
 border:1px solid #111;
 padding:40px;
 background:#050505;
-font-size:18px;
+margin-top:20px;
 line-height:1.8;
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s ease forwards;
 }
 
-/* PROJECTS */
 .projects-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -75,38 +58,12 @@ margin-top:30px;
 border:1px solid #111;
 padding:25px;
 background:#050505;
-transition:0.4s;
 text-align:left;
+transition:0.4s;
 }
 .project:hover{background:#fff;color:#000;}
-
-.project h3{margin-bottom:10px;}
-.project p{font-size:14px;color:#aaa;}
+.project p{color:#aaa;}
 .project:hover p{color:#333;}
-
-.project a{
-display:inline-block;
-margin-top:10px;
-font-size:13px;
-color:#888;
-text-decoration:underline;
-}
-
-/* CONTACT */
-
-.socials a {
-display:flex;
-align-items:center;
-justify-content:center;
-width:50px;
-height:50px;
-}
-
-.contact-box{
-border:1px solid #111;
-padding:40px;
-background:#050505;
-}
 
 .socials{
 margin-top:20px;
@@ -116,20 +73,26 @@ gap:20px;
 }
 
 .socials a{
-color:#fff;
-font-size:22px;
+display:flex;
+align-items:center;
+justify-content:center;
+width:50px;height:50px;
 border:1px solid #fff;
-padding:10px;
+color:#fff;
 transition:0.3s;
 }
-.socials a:hover{
-background:#fff;
-color:#000;
-}
+.socials a:hover{background:#fff;color:#000;}
 
-@keyframes fadeUp{
-to{opacity:1;transform:translateY(0);}
+button{
+margin-top:25px;
+border:1px solid #fff;
+background:transparent;
+color:#fff;
+padding:12px 30px;
+cursor:pointer;
+transition:0.3s;
 }
+button:hover{background:#fff;color:#000;}
 
 @media(max-width:768px){
 #home h1{font-size:40px;}
@@ -143,6 +106,7 @@ to{opacity:1;transform:translateY(0);}
 <nav>
 <a href="#home">Accueil</a>
 <a href="#about">À propos</a>
+<a href="#skills">Compétences</a>
 <a href="#projects">Projets</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -152,9 +116,6 @@ to{opacity:1;transform:translateY(0);}
 <div>
 <h1>SELMA JBILOU</h1>
 <p class="subtitle">Ingénieure en intelligence artificielle spécialisée en machine learning et MLOps</p>
-<button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-Voir mes projets
-</button>
 </div>
 </section>
 
@@ -164,59 +125,109 @@ Voir mes projets
 <h1>À PROPOS</h1>
 
 <div class="about-box">
-Je suis ingénieure en intelligence artificielle spécialisée dans le développement et la mise en production de modèles de machine learning.  
+Je suis ingénieure en intelligence artificielle spécialisée dans le développement et la mise en production de modèles de machine learning.
 
-Je conçois des solutions data de bout en bout, de l’analyse des besoins métiers jusqu’au déploiement et au suivi des performances des modèles.  
+Je conçois des solutions data de bout en bout, de l’analyse des besoins métiers jusqu’au déploiement et au suivi des performances.
 
-Je m’intéresse particulièrement aux problématiques de MLOps, de reproductibilité et d’industrialisation des systèmes IA.
+Je m’intéresse particulièrement au MLOps, à la reproductibilité et à l’industrialisation des modèles IA.
+</div>
+
+
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+<h1>COMPÉTENCES</h1>
+
+<div class="skills-box">
+<p><strong>Langages :</strong> Python</p>
+<p><strong>Machine Learning :</strong> scikit-learn</p>
+<p><strong>MLOps :</strong> MLflow, Git, GitHub</p>
+<p><strong>Data :</strong> Pandas, NumPy</p>
+<p><strong>Outils :</strong> VS Code</p>
+</div>
+
+<div class="soft-box">
+<h3>SOFT SKILLS</h3>
+<p>
+Esprit d’analyse et résolution de problèmes.  
+Rigueur et autonomie dans la conduite de projets.  
+Capacité à prendre du recul et à améliorer mes méthodes de travail.  
+Apprentissage continu et adaptation rapide aux nouvelles technologies.
+</p>
 </div>
 
 </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-<div class="container">
-<h1>MES PROJETS</h1>
-
 <div class="projects-grid">
 
 <div class="project">
-<h3>Crédit Scoring - Projet Data</h3>
-<p><strong>Contexte :</strong> Prédiction de la solvabilité client.</p>
-<p><strong>Besoins :</strong> Réduire le risque de défaut.</p>
-<p><strong>Solution :</strong> Random Forest, XGBoost.</p>
-<p><strong>MLOps :</strong> MLflow + versionnement.</p>
-<p><strong>Résultat :</strong> Accuracy : 91%.</p>
-<a href="#">Voir le projet GitHub</a>
+<h3>Crédit Scoring </h3>
+
+<p><strong>Contexte :</strong> Développement d’un modèle de scoring pour prédire la solvabilité des clients dans un contexte bancaire.</p>
+
+<p><strong>Objectif :</strong> Réduire le risque de défaut de paiement en améliorant la précision des décisions de crédit.</p>
+
+<p><strong>Approche :</strong> Préparation des données (nettoyage, gestion des valeurs manquantes), feature engineering, entraînement de modèles (Random Forest, XGBoost).</p>
+
+<p><strong>MLOps :</strong> Suivi des expérimentations avec MLflow, versionnement des modèles.</p>
+
+<p><strong>Résultat :</strong> Modèle avec une accuracy de 91% et amélioration significative de la détection des profils à risque.</p>
+
+<p><strong>Technologies :</strong> Python, Pandas, scikit-learn, MLflow.</p>
+
+<a href="https://github.com/sjbl69/pret-a-depenser" target="_blank">Voir le projet</a>
 </div>
 
 <div class="project">
-<h3>Machine Learning Model</h3>
-<p>Développement de modèles de classification et régression.</p>
-<p>Optimisation des performances et validation croisée.</p>
-<a href="#">Voir le projet GitHub</a>
+<h3>Brain Scan AI (Analyse d’imagerie médicale)</h3>
+
+<p><strong>Contexte :</strong> Développement d’un modèle d’intelligence artificielle pour analyser des images médicales (IRM / scanners cérébraux).</p>
+
+<p><strong>Objectif :</strong> Aider à la détection automatique d’anomalies cérébrales à partir d’images.</p>
+
+<p><strong>Approche :</strong> Prétraitement des images, normalisation, entraînement d’un modèle de deep learning (CNN) pour la classification ou détection.</p>
+
+<p><strong>Résultat :</strong> Modèle capable d’identifier des patterns visuels complexes avec une précision élevée.</p>
+
+<p><strong>Technologies :</strong> Python, TensorFlow / PyTorch, OpenCV.</p>
+
+<a href="https://github.com/sjbl69/BrainScanAI" target="_blank">Voir le projet</a>
 </div>
 
 <div class="project">
-<h3>Data Analyse</h3>
-<p>Analyse et visualisation de données pour prise de décision.</p>
-<p>Utilisation de Python et outils data.</p>
-<a href="#">Voir le projet GitHub</a>
+<h3>Chatbot RAG (Retrieval-Augmented Generation)</h3>
+
+<p><strong>Contexte :</strong> Développement d’un chatbot intelligent capable de répondre à des questions à partir d’un corpus de documents.</p>
+
+<p><strong>Objectif :</strong> Fournir des réponses pertinentes et contextualisées en s’appuyant sur des données internes.</p>
+
+<p><strong>Approche :</strong> Implémentation d’un pipeline RAG combinant récupération d’information (vector store) et génération de texte via un modèle de langage.</p>
+
+<p><strong>Architecture :</strong> Encodage des documents, indexation dans une base vectorielle, récupération des documents pertinents, génération de réponse.</p>
+
+<p><strong>Résultat :</strong> Chatbot capable de répondre de manière cohérente et contextualisée aux questions utilisateur.</p>
+
+<p><strong>Technologies :</strong> Python, LangChain, embeddings, vector database.</p>
+
+<a href="https://github.com/sjbl69/RAG-EVENTS-CHATBOT" target="_blank">Voir le projet</a>
 </div>
 
 </div>
-</div>
-</section>
 
 <!-- CONTACT -->
 <section id="contact">
 <div class="container">
 <h1>CONTACT</h1>
 
-<div class="contact-box">
+<div class="about-box">
 
-<p>E-mail : selma.jbl92@gmail.com</p>
+<p>Email : selma.jbl92@gmail.com</p>
 
 <div class="socials">
 <a href="https://github.com/sjbl69" target="_blank">
@@ -232,6 +243,9 @@ Je m’intéresse particulièrement aux problématiques de MLOps, de reproductib
 <button>Voir mon CV</button>
 </a>
 
+<a href="rapport.pdf" target="_blank">
+<button>Voir le rapport du projet</button>
+</a>
 
 </div>
 </div>
